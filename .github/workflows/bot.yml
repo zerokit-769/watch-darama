@@ -29,10 +29,11 @@ jobs:
         run: python main.py
 
       - name: Auto-Save Progress to Github
-        if: always() # Pastikan commit selalu berjalan meskipun script di-stop
+        if: always() 
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-          git add selesai.json config.json
+          git add selesai.json || true
+          git add config.json || true
           git commit -m "Auto save progress [skip ci]" || echo "Tidak ada perubahan"
           git push
