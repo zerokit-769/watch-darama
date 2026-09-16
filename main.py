@@ -13,7 +13,7 @@ CONFIG_FILE = "config.json"
 BOT_TOKEN = os.environ.get("BOT_TOKEN")
 CHAT_ID = os.environ.get("CHAT_ID")
 # Batas episode per run agar tidak timeout di Github (Maks 3-4 jam)
-MAX_EPISODES_PER_RUN = 2000  
+MAX_EPISODES_PER_RUN = 300 
 
 def load_json(filename):
     if os.path.exists(filename):
